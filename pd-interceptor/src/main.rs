@@ -6,11 +6,10 @@ use {
     defmt_rtt as _,
     embassy_executor::Spawner,
     embassy_stm32::{
-        bind_interrupts,
+        Config, bind_interrupts,
         i2c::{self, I2c},
         peripherals,
         time::Hertz,
-        Config,
     },
     fusb302b::Fusb302b,
     panic_probe as _,

@@ -1,18 +1,18 @@
 use {
     crate::{
+        DataRole, PowerRole,
         header::{ControlMessageType, DataMessageType, Header, SpecificationRevision},
         messages::{
+            Message,
             pdo::{FixedVariableRequestDataObject, PPSRequestDataObject, SourceCapabilities},
             vdo::{
                 CertStatVDO, ProductVDO, UFPTypeVDO, VDMCommand, VDMCommandType, VDMHeader,
                 VDMHeaderStructured, VDMIdentityHeader, VDMType, VDMVersionMajor, VDMVersionMinor,
             },
-            Message,
         },
-        DataRole, PowerRole,
     },
     core::future::Future,
-    defmt::{debug, warn, Format},
+    defmt::{Format, debug, warn},
     heapless::Vec,
 };
 

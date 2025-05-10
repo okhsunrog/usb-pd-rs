@@ -8,7 +8,7 @@ use {
     },
     crate::header::{ControlMessageType, DataMessageType, Header, MessageType},
     byteorder::{ByteOrder, LittleEndian},
-    defmt::{trace, warn, Format},
+    defmt::{Format, trace, warn},
     heapless::Vec,
     pdo::{
         AugmentedPowerDataObject, AugmentedPowerDataObjectRaw, Battery, EPRAdjustableVoltageSupply,

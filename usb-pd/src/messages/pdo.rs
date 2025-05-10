@@ -1,9 +1,9 @@
 use {
     super::PdoState,
     _20millivolts_mod::_20millivolts,
-    _250milliwatts_mod::_250milliwatts,
     _50milliamperes_mod::_50milliamperes,
     _50millivolts_mod::_50millivolts,
+    _250milliwatts_mod::_250milliwatts,
     byteorder::{ByteOrder, LittleEndian},
     defmt::Format,
     heapless::Vec,
