@@ -173,7 +173,7 @@ impl From<u32> for VDMHeader {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format)]
-    pub struct VDMHeaderRaw(pub u32): FromRaw, IntoRaw {
+    pub struct VDMHeaderRaw(pub u32): FromStorage, IntoStorage {
         /// VDM Standard or Vendor ID
         pub standard_or_vid: u16 @ 16..=31,
         /// VDM Type (Unstructured/Structured)
@@ -189,7 +189,7 @@ impl VDMHeaderRaw {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format, Debug)]
-    pub struct VDMHeaderStructured(pub u32): FromRaw, IntoRaw {
+    pub struct VDMHeaderStructured(pub u32): FromStorage, IntoStorage {
         /// VDM Standard or Vendor ID
         pub standard_or_vid: u16 @ 16..=31,
         /// VDM Type (Unstructured/Structured)
@@ -272,7 +272,7 @@ impl From<u8> for VDMVersionMinor {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format, Debug)]
-    pub struct VDMHeaderUnstructured(pub u32): FromRaw, IntoRaw {
+    pub struct VDMHeaderUnstructured(pub u32): FromStorage, IntoStorage {
         /// VDM Standard or Vendor ID
         pub standard_or_vid: u16 @ 16..=31,
         /// VDM Type (Unstructured/Structured)
@@ -290,7 +290,7 @@ impl VDMHeaderUnstructured {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format, Debug)]
-    pub struct VDMIdentityHeader(pub u32): FromRaw, IntoRaw {
+    pub struct VDMIdentityHeader(pub u32): FromStorage, IntoStorage {
         /// Host data capable
         pub host_data: bool @ 31,
         /// Device data capable
@@ -406,7 +406,7 @@ impl From<u8> for ConnectorType {
 }
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format, Debug)]
-    pub struct CertStatVDO(pub u32): FromRaw, IntoRaw {
+    pub struct CertStatVDO(pub u32): FromStorage, IntoStorage {
         /// XID
         pub xid: u32 @ 0..=31,
     }
@@ -420,7 +420,7 @@ impl CertStatVDO {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format, Debug)]
-    pub struct ProductVDO(pub u32): FromRaw, IntoRaw {
+    pub struct ProductVDO(pub u32): FromStorage, IntoStorage {
         /// USB Product ID
         pub pid: u16 @ 16..=31,
         pub bcd_device: u16 @ 0..=15,
@@ -435,7 +435,7 @@ impl ProductVDO {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format, Debug)]
-    pub struct UFPTypeVDO(pub u32): FromRaw, IntoRaw {
+    pub struct UFPTypeVDO(pub u32): FromStorage, IntoStorage {
         /// USB Product ID
         pub version: u8 @ 29..=31,
         pub device_capability: u8 @ 24..=27,
@@ -553,7 +553,7 @@ impl From<u8> for UFPVDOVersion {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format)]
-    pub struct DisplayPortCapabilities(pub u32): FromRaw, IntoRaw {
+    pub struct DisplayPortCapabilities(pub u32): FromStorage, IntoStorage {
         /// UFP_D Pin Assignments Supported
         pub ufp_d_pin_assignments: u8 @ 16..=23,
         /// DFP_D Pin Assignments Supported

@@ -1,7 +1,7 @@
 [package]
 name = "fusb302b"
 version = "0.0.1"
-edition = "2021"
+edition = "2024"
 description = "FUSB302B driver for `usb-pd` library."
 documentation = "https://docs.rs/fusb302b"
 repository = "https://github.com/fmckeogh/usb-pd-rs"
@@ -14,11 +14,11 @@ harness = false # do not use the built-in cargo test harness -> resolve rust-ana
 test = false
 
 [dependencies]
-byteorder = { version = "1.5.0", default-features = false }
-embedded-hal-async = "1.0.0"
-heapless = { version = "0.8.0", features = ["defmt-03"] }
+byteorder = { version = "1.5", default-features = false }
+embedded-hal-async = "1.0"
+heapless = { version = "0.8", features = ["defmt-03"] }
 defmt = "1.0"
-paste = "1.0.14"
+paste = "1.0"
 proc-bitfield = "0.5"
 embassy-time = "0.4"
 

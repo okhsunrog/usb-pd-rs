@@ -67,14 +67,14 @@ pub enum PowerDataObject {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format)]
-    pub struct PowerDataObjectRaw(pub u32): Debug, FromRaw, IntoRaw {
+    pub struct PowerDataObjectRaw(pub u32): Debug, FromStorage, IntoStorage {
         pub kind: u8 @ 30..=31,
     }
 }
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format)]
-    pub struct FixedSupply(pub u32): Debug, FromRaw, IntoRaw {
+    pub struct FixedSupply(pub u32): Debug, FromStorage, IntoStorage {
         /// Fixed supply
         pub kind: u8 @ 30..=31,
         /// Dual-role power
@@ -112,7 +112,7 @@ impl FixedSupply {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format)]
-    pub struct Battery(pub u32): Debug, FromRaw, IntoRaw {
+    pub struct Battery(pub u32): Debug, FromStorage, IntoStorage {
         /// Battery
         pub kind: u8 @ 30..=31,
         /// Maximum Voltage in 50mV units
@@ -140,7 +140,7 @@ impl Battery {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format)]
-    pub struct VariableSupply(pub u32): Debug, FromRaw, IntoRaw {
+    pub struct VariableSupply(pub u32): Debug, FromStorage, IntoStorage {
         /// Variable supply (non-battery)
         pub kind: u8 @ 30..=31,
         /// Maximum Voltage in 50mV units
@@ -175,7 +175,7 @@ pub enum AugmentedPowerDataObject {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format)]
-    pub struct AugmentedPowerDataObjectRaw(pub u32): Debug, FromRaw, IntoRaw {
+    pub struct AugmentedPowerDataObjectRaw(pub u32): Debug, FromStorage, IntoStorage {
         /// Augmented power data object
         pub kind: u8 @ 30..=31,
         pub supply: u8 @ 28..=29,
@@ -185,7 +185,7 @@ bitfield! {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format)]
-    pub struct SPRProgrammablePowerSupply(pub u32): Debug, FromRaw, IntoRaw {
+    pub struct SPRProgrammablePowerSupply(pub u32): Debug, FromStorage, IntoStorage {
         /// Augmented power data object
         pub kind: u8 @ 30..=31,
         /// SPR programmable power supply
@@ -216,7 +216,7 @@ impl SPRProgrammablePowerSupply {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format)]
-    pub struct EPRAdjustableVoltageSupply(pub u32): Debug, FromRaw, IntoRaw {
+    pub struct EPRAdjustableVoltageSupply(pub u32): Debug, FromStorage, IntoStorage {
         /// Augmented power data object
         pub kind: u8 @ 30..=31,
         /// EPR adjustable voltage supply
@@ -247,7 +247,7 @@ impl EPRAdjustableVoltageSupply {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format)]
-    pub struct RawRequestDataObject(pub u32): Debug, FromRaw, IntoRaw {
+    pub struct RawRequestDataObject(pub u32): Debug, FromStorage, IntoStorage {
         /// Valid range 1..=14
         pub object_position: u8 @ 28..=31,
     }
@@ -255,7 +255,7 @@ bitfield! {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format)]
-    pub struct FixedVariableRequestDataObject(pub u32): Debug, FromRaw, IntoRaw {
+    pub struct FixedVariableRequestDataObject(pub u32): Debug, FromStorage, IntoStorage {
         /// Valid range 1..=14
         pub object_position: u8 @ 28..=31,
         pub giveback_flag: bool @ 27,
@@ -285,7 +285,7 @@ impl FixedVariableRequestDataObject {
 
 bitfield! {
     #[derive(Clone, Copy, PartialEq, Eq, Format)]
-    pub struct BatteryRequestDataObject(pub u32): Debug, FromRaw, IntoRaw {
+    pub struct BatteryRequestDataObject(pub u32): Debug, FromStorage, IntoStorage {
         /// Object position (0000b and 1110b…1111b are Reserved and Shall Not be used)
         pub object_position: u8 @ 28..=31,
         /// GiveBackFlag = 0
@@ -323,7 +323,7 @@ impl BatteryRequestDataObject {
 
 bitfield!(
     #[derive(Clone, Copy, PartialEq, Eq, Format)]
-    pub struct PPSRequestDataObject(pub u32): Debug, FromRaw, IntoRaw {
+    pub struct PPSRequestDataObject(pub u32): Debug, FromStorage, IntoStorage {
         /// Object position (0000b and 1110b…1111b are Reserved and Shall Not be used)
         pub object_position: u8 @ 28..=31,
         /// Capability mismatch
@@ -359,7 +359,7 @@ impl PPSRequestDataObject {
 
 bitfield!(
     #[derive(Clone, Copy, PartialEq, Eq, Format)]
-    pub struct AVSRequestDataObject(pub u32): Debug, FromRaw, IntoRaw {
+    pub struct AVSRequestDataObject(pub u32): Debug, FromStorage, IntoStorage {
         /// Object position (0000b and 1110b…1111b are Reserved and Shall Not be used)
         pub object_position: u8 @ 28..=31,
         /// Capability mismatch

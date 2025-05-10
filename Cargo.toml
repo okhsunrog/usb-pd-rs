@@ -1,6 +1,6 @@
 [workspace]
 members = ["pd-interceptor", "fusb302b", "usb-pd"]
-resolver = "2"
+resolver = "3"
 
 [profile.release]
 opt-level = "s"

@@ -1,7 +1,7 @@
 [package]
 name = "usb-pd"
 version = "0.0.1"
-edition = "2021"
+edition = "2024"
 description = "USB-PD `no_std` library with source and sink support."
 documentation = "https://docs.rs/usb-pd"
 repository = "https://github.com/fmckeogh/usb-pd-rs"
@@ -14,9 +14,9 @@ harness = false # do not use the built-in cargo test harness -> resolve rust-ana
 test = false
 
 [dependencies]
-proc-bitfield = "0.4.0"
-byteorder = { version = "1.5.0", default-features = false }
+proc-bitfield = "0.5"
+byteorder = { version = "1.5", default-features = false }
 defmt = "1.0"
-heapless = { version = "0.8.0", features = ["defmt-03"] }
+heapless = { version = "0.8", features = ["defmt-03"] }
 embassy-time = "0.4"
-uom = { version = "0.36.0", default-features = false, features = ["autoconvert", "si", "u8", "u16", "u32"] }
+uom = { version = "0.36", default-features = false, features = ["autoconvert", "si", "u8", "u16", "u32"] }
